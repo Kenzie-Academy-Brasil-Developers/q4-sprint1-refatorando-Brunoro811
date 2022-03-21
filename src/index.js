@@ -301,7 +301,8 @@ app.delete(
       .json({ messagem: "Vehicle deleted", vehicles: company.vehicles });
   }
 );
-/**---------------------------------- ROUTER VEHICLE --------------------------------------------- */
-app.listen(port, () => {
+/**---------------------------------- 1ROUTER VEHICLE --------------------------------------------- */
+export default app;
+/*app.listen(port, () => {
   console.log("App running");
-});
+});*/

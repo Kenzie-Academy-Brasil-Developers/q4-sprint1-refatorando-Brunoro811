@@ -1,12 +1,11 @@
 {
   "name": "q4-entrega-refatorando-codigo-node",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --experimental-modules src/index.js"
+    "dev": "nodemon --experimental-modules src/server.js"
   },
-  "type": "module",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
