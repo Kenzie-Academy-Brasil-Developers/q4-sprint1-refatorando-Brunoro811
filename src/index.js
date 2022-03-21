@@ -192,7 +192,6 @@ app.post("/companies/login", async (req, res) => {
 
   res.status(200).json({ token, company });
 });
-
 app.get("/companies", (req, res) => {
   res.status(200).json(companies);
 });

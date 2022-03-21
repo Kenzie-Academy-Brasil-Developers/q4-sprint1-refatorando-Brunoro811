@@ -1,15 +1,15 @@
-import authenticateCompany from "./authenticateCompany"
-import validateSchema from "./validateSchema"
-import verifyCompanyExistence from "./verifyCompanyExistence"
-import verifyDuplicateCnpj from "./verifyDuplicateCnpj"
-import verifyDuplicateVehiclePlate from "./verifyDuplicateVehiclePlate"
-import verifyVehicleExistence from "./verifyVehicleExistence"
+import authenticateCompanyMiddleware from "./authenticateCompany"
+import validateSchemaMiddleware from "./validateSchema"
+import verifyCompanyExistenceMiddleware from "./verifyCompanyExistence"
+import verifyDuplicateCnpjMiddleware from "./verifyDuplicateCnpj"
+import verifyDuplicateVehiclePlateMiddleware from "./verifyDuplicateVehiclePlate"
+import verifyVehicleExistenceMiddleware from "./verifyVehicleExistence"
 
-export default {
-    authenticateCompany,
-    validateSchema,
-    verifyCompanyExistence,
-    verifyDuplicateCnpj,
-    verifyVehicleExistence,
-    verifyDuplicateVehiclePlate
+export {
+    authenticateCompanyMiddleware,
+    validateSchemaMiddleware,
+    verifyCompanyExistenceMiddleware,
+    verifyDuplicateCnpjMiddleware,
+    verifyVehicleExistenceMiddleware,
+    verifyDuplicateVehiclePlateMiddleware
 }
