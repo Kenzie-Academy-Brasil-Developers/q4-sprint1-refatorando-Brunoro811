@@ -87,6 +87,7 @@ const authenticateCompany = (req, res, next) => {
     }
   });
 };
+/**---------------------------------- SCHAMA FEITO --------------------------------------------- */
 
 const companySchema = yup.object().shape({
   name: yup
@@ -134,6 +135,10 @@ const vehicleSchema = yup.object().shape({
     .required("Campo de placa obrigátorio"),
 });
 
+/**---------------------------------- SCHAMA FEITO --------------------------------------------- */
+
+/**------------------------------------------------------------------------------- */
+
 const validate = (schema) => async (req, res, next) => {
   const resource = req.body;
   try {
@@ -144,6 +149,7 @@ const validate = (schema) => async (req, res, next) => {
     res.status(400).json({ error: e.errors.join(", ") });
   }
 };
+/**------------------------------------------------------------------------------- */
 
 app.post(
   "/companies/register",

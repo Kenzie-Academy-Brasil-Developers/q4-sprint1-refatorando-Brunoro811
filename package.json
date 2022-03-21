@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon --experimental-modules src/index.js"
   },
+  "type": "module",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
@@ -16,5 +17,7 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": "git@github.com:Kenzie-Academy-Brasil-Developers/q4-sprint1-refatorando-Brunoro811.git",
+  "author": "Brunoro811 <ferreira.bruno.oliveira@gmail.com>"
 }
