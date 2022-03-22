@@ -15,6 +15,19 @@ app.use(express.json());
 
 let companies = [];
 
+
+/**-------------------------------- MW FEITO ----------------------------------------------- */
+
+const validate = (schema) => async (req, res, next) => {
+  const resource = req.body;
+  try {
+    await schema.validate(resource);
+    next();
+  } catch (e) {
+    console.error(e);
+    res.status(400).json({ error: e.errors.join(", ") });
+  }
+};
 const verifyDuplicateCnpj = (req, res, next) => {
   let { cnpj } = req.body;
 
@@ -26,7 +39,6 @@ const verifyDuplicateCnpj = (req, res, next) => {
 
   return next();
 };
-
 const verifyDuplicateVehiclePlate = (req, res, next) => {
   let { plate } = req.body;
 
@@ -40,7 +52,6 @@ const verifyDuplicateVehiclePlate = (req, res, next) => {
 
   return next();
 };
-
 const verifyCompanyExistence = (req, res, next) => {
   let { cnpj } = req.params;
 
@@ -54,7 +65,6 @@ const verifyCompanyExistence = (req, res, next) => {
 
   return next();
 };
-
 const verifyVehicleExistence = (req, res, next) => {
   let { plate } = req.params;
 
@@ -70,7 +80,6 @@ const verifyVehicleExistence = (req, res, next) => {
 
   return next();
 };
-
 const authenticateCompany = (req, res, next) => {
   if (!req.headers.authorization) {
     return res.status(401).json({ message: "Missing authorization" });
@@ -87,6 +96,9 @@ const authenticateCompany = (req, res, next) => {
     }
   });
 };
+
+/**----------------------------------- MW FEITO-------------------------------------------- */
+/**---------------------------------- SCHAMA FEITO --------------------------------------------- */
 
 const companySchema = yup.object().shape({
   name: yup
@@ -134,16 +146,11 @@ const vehicleSchema = yup.object().shape({
     .required("Campo de placa obrigátorio"),
 });
 
-const validate = (schema) => async (req, res, next) => {
-  const resource = req.body;
-  try {
-    await schema.validate(resource);
-    next();
-  } catch (e) {
-    console.error(e);
-    res.status(400).json({ error: e.errors.join(", ") });
-  }
-};
+/**---------------------------------- SCHAMA FEITO --------------------------------------------- */
+
+
+/**---------------------------------- ROUTER COMPANY --------------------------------------------- */
+
 
 app.post(
   "/companies/register",
@@ -185,7 +192,6 @@ app.post("/companies/login", async (req, res) => {
 
   res.status(200).json({ token, company });
 });
-
 app.get("/companies", (req, res) => {
   res.status(200).json(companies);
 });
@@ -219,6 +225,9 @@ app.delete(
   }
 );
 
+/**---------------------------------- ROUTER COMPANY --------------------------------------------- */
+
+/**---------------------------------- ROUTER VEHICLE --------------------------------------------- */
 app.post(
   "/companies/:cnpj/vehicles",
   authenticateCompany,
@@ -291,7 +300,8 @@ app.delete(
       .json({ messagem: "Vehicle deleted", vehicles: company.vehicles });
   }
 );
-
-app.listen(port, () => {
+/**---------------------------------- 1ROUTER VEHICLE --------------------------------------------- */
+export default app;
+/*app.listen(port, () => {
   console.log("App running");
-});
+});*/
