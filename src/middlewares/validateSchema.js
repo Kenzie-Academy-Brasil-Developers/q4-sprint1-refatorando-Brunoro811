@@ -4,8 +4,7 @@ const validateSchema = (schema) => async (req, res, next) => {
     await schema.validate(resource);
     next();
   } catch (e) {
-    console.error(e);
-    res.status(400).json({ error: e.errors.join(", ") });
+    return res.status(400).json({ error: e.errors.join(", ") });
   }
 };
 

@@ -28,6 +28,7 @@ const companySchema = yup.object().shape({
       .required("Campo de estado obrigátorio"),
     city: yup
       .string("Formato de cidade inválido")
+      .matches(/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s]+$/)
       .required("Campo de cidade obrigátorio"),
   });
 
