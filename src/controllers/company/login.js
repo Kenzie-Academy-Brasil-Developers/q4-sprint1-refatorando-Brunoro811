@@ -10,7 +10,7 @@ const login = async (req,res) =>{
     if (!company) {
       return res.status(401).json({ message: "Company not found" });
     }
-
+    
     const match = await bcrypt.compare(password, company.password);
     if (!match) {
       return res.status(401).json({ message: "User and password missmatch." });

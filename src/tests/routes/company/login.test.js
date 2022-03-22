@@ -1,10 +1,10 @@
 import { describe, expect, it } from "@jest/globals";
 import request from "supertest";
 
-import app from "../../app"
+import app from "../../../app"
 
 
-describe("Test route GET /companies ", ()=>{
+describe("Test route Post /companies/login ", ()=>{
     it("should be able return company list.", async()=>{
         const response = await 
         request(app).get("/companies");

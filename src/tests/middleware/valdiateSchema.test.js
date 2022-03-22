@@ -1,21 +1,11 @@
-import { describe,it, jest } from "@jest/globals";
+import { describe,it } from "@jest/globals";
+import { validateSchemaMiddleware } from "../../middlewares";
 
-import { validateSchemaMiddleware } from "../../middlewares"
-
-import { companySchema } from "../../shapes"
-
-import { wrongCompany } from "../dateUserInCompany"
+import { companySchema } from "../../shapes";
+import { wrongCompany } from "../dateUserInCompany";
+import { mockReq,mockRes,nextFx } from "../middleware/mockMiddleware";
 
 describe("Test Middleware", ()=>{
-
-    const mockReq = {};
-    const mockRes = {};
-    const nextFx = jest.fn();
-
-    beforeEach(() =>{
-        mockRes.json = jest.fn().mockReturnValue(mockRes);
-        mockRes.status = jest.fn().mockReturnValue(mockRes);
-    });
 
     it("should be able thow error in validadeSchema", async()=>{
 

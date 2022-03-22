@@ -1,8 +1,8 @@
 import { describe, it, expect } from "@jest/globals"
 import request from "supertest";
-import app from "../../app";
+import app from "../../../app";
 
-import { company } from "../dateUserInCompany"
+import { company } from "../../dateUserInCompany"
 
 
 describe("Test Register", ()=>{

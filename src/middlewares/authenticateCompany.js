@@ -11,7 +11,6 @@ const authenticateCompany = (req, res, next) => {
   
     jwt.verify(token, config.secret, (err, decoded) => {
       if (err) {
-        console.log(err);
         return res.status(401).json({ message: "Invalid Token." });
       } else {
         return next();
