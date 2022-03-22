@@ -1,3 +1,5 @@
+import { database as companies } from "../configs"
+
 const verifyVehicleExistence = (req, res, next) => {
     let { plate } = req.params;
   

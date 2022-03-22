@@ -18,3 +18,9 @@ export const wrongCompany = {
     "state": "CE",
     "city": "Fortaleza"
 }
+export const vehicle = {
+    "model": "Prisma",
+    "brand": "GM",
+    "year": 2022,
+    "plate": "ABC-1234"
+}
