@@ -5,11 +5,7 @@
 > Status: Em Desenvolvimento ⚠️
 
 # Sobre o Projeto
-
-
-**Metaformo Tattoo Api** é uma aplicação de serviço construida durante o capstone do Q3 no curso de Fullstack Developer na Kenzie Academy. Esta aplicação foi desenvolvida com o Python e o Micro Framework Flask.
-
-O Objetivo da aplicação é o usuário cliente marcar agendamentos de tatuagem com um tatuador de sua escolha. O tatuador pode ver seus agendamentos e organizar seu dia a dia para realizar tais atividades.
+O objetivo desde repositorio é mostrar a organização dos arquivos e a criação dos testes com jest no node.
 
 # Tecnologias Utilizadas
 
