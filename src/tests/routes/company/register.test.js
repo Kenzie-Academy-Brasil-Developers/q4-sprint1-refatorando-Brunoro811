@@ -5,9 +5,9 @@ import app from "../../../app";
 import { company } from "../../dateUserInCompany"
 
 
-describe("Test Register", ()=>{
+describe("Test Register Company", ()=>{
 
-    it("should be able register company and return status cide 201", async ()=>{
+    it("should be able register company and return status code 201", async ()=>{
         
         const resultExpected ='Company successfully created'
         const response = await 

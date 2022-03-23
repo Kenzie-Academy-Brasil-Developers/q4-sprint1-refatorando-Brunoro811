@@ -6,8 +6,8 @@ const register = (req,res) =>{
         id: uuidv4(),
         acquisition_date: new Date(),
       };
-  
       let { company } = req;
+      console.log("Output: ",company);
   
       company.vehicles.push(newVehicle);
   

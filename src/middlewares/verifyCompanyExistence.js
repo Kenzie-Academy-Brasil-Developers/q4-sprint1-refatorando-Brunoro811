@@ -2,7 +2,8 @@ import { database as companies } from "../configs"
 
 const verifyCompanyExistence = (req, res, next) => {
     let { cnpj } = req.params;
-
+    console.log("CNPJ: ",cnpj)
+    
     let company = companies.find((company) => company.cnpj == cnpj);
 
     if (!company) {
