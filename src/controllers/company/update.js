@@ -5,7 +5,7 @@ const update = (req,res)=>{
     let updatedCompany = { ...company, ...req.body };
 
     let index = companies.indexOf(company);
-
+    
     companies[index] = updatedCompany;
 
     return res.status(200).json({ messagem: "Company updated", companies });
