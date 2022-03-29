@@ -19,27 +19,27 @@ import {
 
 const vehicleRoutes = (app) =>{
 
-    route.post("/vehicles",
+    route.post("/:cnpj/vehicles",
         authenticateCompanyMiddleware,
         verifyCompanyExistenceMiddleware,
         verifyDuplicateVehiclePlateMiddleware,
         registerVehicleController 
     )
 
-    route.get("/vehicles", 
+    route.get("/:cnpj/vehicles", 
         authenticateCompanyMiddleware,
         verifyCompanyExistenceMiddleware,
         getVehicleController
     )
-
-    route.put("/vehicles/:plate",
+ 
+    route.put("/:cnpj/vehicles/:plate",
         authenticateCompanyMiddleware,
         verifyCompanyExistenceMiddleware,
         verifyVehicleExistenceMiddleware,
         updateVehicleController
     )
 
-    route.delete("/vehicles/:plate",
+    route.delete("/:cnpj/vehicles/:plate",
         authenticateCompanyMiddleware,
         verifyCompanyExistenceMiddleware,
         verifyVehicleExistenceMiddleware,
@@ -47,6 +47,6 @@ const vehicleRoutes = (app) =>{
 
     )
 
-    app.use("/companies/:cnpj",route)
+    app.use("/companies",route)
 }
 export default vehicleRoutes;

@@ -16,7 +16,7 @@ describe("Test Register Vehicle", ()=>{
             request(app).post(`/companies/${company.cnpj}/vehicles`,
             ).send(vehicle).set('Authorization', `Bearer ${token}`);
         
-        console.log("Output: ",token);
+
 
         /*
         expect(response.statusCode).toBe(201);

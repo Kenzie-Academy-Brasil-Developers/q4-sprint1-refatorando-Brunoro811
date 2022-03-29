@@ -1,15 +1,7 @@
-import {v4 as uuidv4} from "uuid";
+import { registerVehicleService } from "../../services";
 
 const register = (req,res) =>{
-    let newVehicle = {
-        ...req.body,
-        id: uuidv4(),
-        acquisition_date: new Date(),
-      };
-      let { company } = req;
-      console.log("Output: ",company);
-  
-      company.vehicles.push(newVehicle);
+     const { company,newVehicle }  = registerVehicleService(req);
   
       return res.status(201).json({
         message: `Vehicle ${newVehicle.model} from year ${newVehicle.year} was acquired to the ${company.name}'s fleet`,

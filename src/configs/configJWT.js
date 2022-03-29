@@ -1,5 +1,5 @@
 const config = {
     secret: "the_greatest_secret_key",
-    expiresIn: "604800",
+    expiresIn: 3600,
   };
 export default config;

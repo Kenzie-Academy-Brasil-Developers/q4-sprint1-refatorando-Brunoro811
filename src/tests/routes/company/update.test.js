@@ -17,12 +17,12 @@ describe("Test Update", ()=>{
         
         const companyUpdate = {...company, "name": "companhia2"};
         const response = await 
-        request(app).patch(`/companies/${company.cnpj}`,
+        request(app).put(`/companies/${company.cnpj}`,
         ).send(companyUpdate).set('Authorization', `Bearer ${token}`);
         
         const expectedJsonReturnUpdated = {
             messagem: 'Company updated',
-            companies: [
+            company: 
               {
                 name: 'companhia2',
                 cnpj: '12123123000102',
@@ -35,7 +35,7 @@ describe("Test Update", ()=>{
                 id: expect.anything(),
                 vehicles: []
               }
-            ]
+            
           }
           
         expect(response.statusCode).toBe(200);
@@ -43,3 +43,4 @@ describe("Test Update", ()=>{
         
     }) 
 }) 
+ 

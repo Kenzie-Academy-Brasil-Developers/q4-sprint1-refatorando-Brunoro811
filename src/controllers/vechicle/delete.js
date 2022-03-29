@@ -1,14 +1,10 @@
+import { deleteVehicleService } from "../../services";
+
 const deleteVehicle = (req,res) =>{
-    let { plate } = req.params;
-
-    let { company } = req;
-
-    company.vehicles = company.vehicles.filter(
-      (vehicle) => vehicle.plate !== plate
-    );
-
+  
+  const vehicleDeleted = deleteVehicleService(req);
     return res
       .status(200)
-      .json({ messagem: "Vehicle deleted", vehicles: company.vehicles });
+      .json({ messagem: "Vehicle deleted", vehicles: vehicleDeleted });
 }
-export default deleteVehicle;
+export default deleteVehicle; 

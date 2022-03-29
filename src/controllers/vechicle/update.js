@@ -1,11 +1,7 @@
+import { updateVehicleService } from "../../services";
+
 const update = (req,res) =>{
-    let { vehicle, company } = req;
-
-    let updatedVehicle = { ...vehicle, ...req.body };
-
-    let index = company.vehicles.indexOf(vehicle);
-
-    company.vehicles[index] = updatedVehicle;
+  const updatedVehicle = updateVehicleService(req);
 
     return res
       .status(200)

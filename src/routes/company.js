@@ -31,7 +31,7 @@ const companyRoutes = (app) =>{
     )
     route.post("/login", loginController )
     route.get("", getAllController )
-    route.patch("/:cnpj",
+    route.put("/:cnpj",
         authenticateCompanyMiddleware,
         verifyCompanyExistenceMiddleware,
         updateController

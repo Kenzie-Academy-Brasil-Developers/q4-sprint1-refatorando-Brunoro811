@@ -5,11 +5,13 @@ import { verifyVehicleExistenceMiddleware } from "../../middlewares";
 
 import { mockReq,mockRes,nextFx } from "./mockMiddleware";
 import { vehicle } from "../dateUserInCompany";
+import { company } from "../dateUserInCompany";
 
 describe("Test Middleware Vehicle Existence", ()=>{
     it("Should be able verify vehicle existence and return vehicle not registered.",()=>{
         
         registerCompanyVehicleTest();
+        mockReq.company = company;
         mockReq.params = vehicle.plate;
         verifyVehicleExistenceMiddleware(mockReq,mockRes,nextFx);
 
