@@ -1,5 +1,6 @@
 import { database as companies } from "../../configs";
 import {} from ""
+import secureReturn from "../secureReturn";
 
 const updateCompanyService = (req) =>{
     let { company } = req;
@@ -8,8 +9,8 @@ const updateCompanyService = (req) =>{
     let index = companies.indexOf(company);
     
     companies[index] = updatedCompany;
-
-    return companies[index]
+    
+    return secureReturn(companies[index])
 
 };
 export default updateCompanyService;

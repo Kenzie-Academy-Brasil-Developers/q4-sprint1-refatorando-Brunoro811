@@ -18,7 +18,9 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.16.7",
     "@sucrase/jest-plugin": "^2.2.0",
+    "@types/express-list-endpoints": "^6.0.0",
     "@types/jest": "^27.4.1",
+    "express-list-endpoints": "^6.0.0",
     "express-list-routes": "^1.1.3",
     "jest": "^27.5.1",
     "nodemon": "^2.0.15",

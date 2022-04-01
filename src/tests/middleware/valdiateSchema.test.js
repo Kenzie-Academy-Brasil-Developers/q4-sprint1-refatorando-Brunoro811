@@ -1,7 +1,7 @@
 import { describe,it } from "@jest/globals";
 import { validateSchemaMiddleware } from "../../middlewares";
 
-import { companySchema } from "../../shapes";
+import { companySchema } from "../../models";
 import { wrongCompany } from "../dateUserInCompany";
 import { mockReq,mockRes,nextFx } from "../middleware/mockMiddleware";
 

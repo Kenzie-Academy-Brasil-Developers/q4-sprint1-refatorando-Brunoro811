@@ -19,7 +19,7 @@ import {
 
 import {
     companySchema
-} from "../shapes"
+} from "../models"
 
 const route = Router();
 

@@ -18,6 +18,6 @@ const loginCompanyService = async (body) =>{
     const token = jwt.sign({ cnpj: cnpj }, config.secret, {
       expiresIn: config.expiresIn,
     });
-    return {status: 200, bodyJson: {"token": token,"company": company}};
+    return {status: 200, bodyJson: {"token": token}};
 };
 export default loginCompanyService;
